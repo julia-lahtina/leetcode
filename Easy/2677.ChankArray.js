@@ -25,7 +25,7 @@ Input: arr = [], size = 1
 Output: []
 Explanation: There are no elements to be chunked so an empty array is returned. */
 
-
+// 1 Variante
 var chunk = function(arr, size) {
     if(arr.length === 0) return [];
 
@@ -44,6 +44,18 @@ var chunk = function(arr, size) {
 
     if(subArr.length > 0) result.push(subArr);
 
+    return result;
+};
+
+
+
+// 2 Variante
+
+var chunk = function(arr, size) {
+    const result = [];
+    for (let i = 0; i < arr.length; i += size) {
+        result.push(arr.slice(i, i + size));
+    }
     return result;
 };
 
